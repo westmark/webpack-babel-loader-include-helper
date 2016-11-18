@@ -17,11 +17,12 @@ function analyzeDir( dirPath, options ) {
   directories.forEach( ( dir ) => {
     const packageJsonPath = path.join( dirPath, dir, 'package.json' );
     if ( fs.existsSync( packageJsonPath ) ) {
-      const packageJson = require( path.join( dirPath, dir, 'package.json' ) );
-      if ( Reflect.has( packageJson, 'js:next' ) || Reflect.has( packageJson, 'module' ) ) {
-        babelPkgs.push( path.join( dirPath, dir ) );
+      const realDirPath = fs.realpathSync( path.join( dirPath, dir ) );
+      const packageJson = require( path.join( realDirPath, 'package.json' ) );
+      if ( Reflect.has( packageJson, 'jsnext:main' ) || Reflect.has( packageJson, 'module' ) ) {
+        babelPkgs.push( realDirPath );
       } else {
-        legacyPkgs.push( path.join( dirPath, dir ) );
+        legacyPkgs.push( realDirPath );
       }
 
       if ( options.recursive ) {
