@@ -1,5 +1,5 @@
 const analyze = require( './index.js' );
 
-const { babelDirs, legacyDirs } = analyze( process.cwd() );
-babelDirs.forEach( ( dir ) => console.log( 'babel', dir ) );
-legacyDirs.forEach( ( dir ) => console.log( 'legacy', dir ) );
+const { babelPkgs, legacyPkgs } = analyze( process.cwd() );
+babelPkgs.forEach( ( dir ) => console.log( 'babel', dir ) );
+legacyPkgs.forEach( ( dir ) => console.log( 'legacy', dir ) );
