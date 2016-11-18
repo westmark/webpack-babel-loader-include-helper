@@ -1,0 +1,28 @@
+{
+  "name": "webpack-babel-loader-include-helper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "3.9.1",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-config-react-app": "^0.3.0",
+    "eslint-import-resolver-node": "^0.2.3",
+    "eslint-loader": "1.6.1",
+    "eslint-plugin-flowtype": "2.25.0",
+    "eslint-plugin-import": "2.2.0",
+    "eslint-plugin-jsx-a11y": "2.2.3",
+    "eslint-plugin-react": "6.6.0"
+  },
+  "eslintConfig": {
+    "extends": "./eslint.js"
+  },
+  "dependencies": {
+    "babel-eslint": "^7.1.1"
+  }
+}
